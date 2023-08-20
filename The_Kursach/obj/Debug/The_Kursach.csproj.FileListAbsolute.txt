@@ -1,0 +1,11 @@
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\bin\Debug\The_Kursach.exe.config
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\bin\Debug\The_Kursach.exe
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\bin\Debug\The_Kursach.pdb
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.csproj.AssemblyReference.cache
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.csproj.SuggestedBindingRedirects.cache
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.Properties.Resources.resources
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.csproj.GenerateResource.cache
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.csproj.CoreCompileInputs.cache
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.exe
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.pdb
+C:\!!!КУРСАЧ\The_Kursach\The_Kursach\obj\Debug\The_Kursach.MAINFORM.resources

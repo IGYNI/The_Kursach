@@ -36,7 +36,10 @@
             this.Block_Search = new System.Windows.Forms.Panel();
             this.Block_Contacts = new System.Windows.Forms.Panel();
             this.Timer_Form_ChangePositionByMouseDragAndDrop = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.DebugLabel = new System.Windows.Forms.Label();
             this.Block_Menu.SuspendLayout();
+            this.Block_Contacts.SuspendLayout();
             this.SuspendLayout();
             // 
             // Block_Menu
@@ -81,18 +84,19 @@
             // 
             this.Block_Search.AutoSize = true;
             this.Block_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(4)))), ((int)(((byte)(123)))));
-            this.Block_Search.Location = new System.Drawing.Point(0, 20);
+            this.Block_Search.Location = new System.Drawing.Point(-1, 20);
             this.Block_Search.Name = "Block_Search";
-            this.Block_Search.Size = new System.Drawing.Size(365, 40);
+            this.Block_Search.Size = new System.Drawing.Size(365, 33);
             this.Block_Search.TabIndex = 1;
             // 
             // Block_Contacts
             // 
             this.Block_Contacts.AutoSize = true;
             this.Block_Contacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(25)))), ((int)(((byte)(148)))));
-            this.Block_Contacts.Location = new System.Drawing.Point(0, 59);
+            this.Block_Contacts.Controls.Add(this.DebugLabel);
+            this.Block_Contacts.Location = new System.Drawing.Point(0, 53);
             this.Block_Contacts.Name = "Block_Contacts";
-            this.Block_Contacts.Size = new System.Drawing.Size(365, 203);
+            this.Block_Contacts.Size = new System.Drawing.Size(365, 206);
             this.Block_Contacts.TabIndex = 2;
             // 
             // Timer_Form_ChangePositionByMouseDragAndDrop
@@ -101,6 +105,25 @@
             this.Timer_Form_ChangePositionByMouseDragAndDrop.Interval = 10;
             this.Timer_Form_ChangePositionByMouseDragAndDrop.Tick += new System.EventHandler(this.Timer_Form_ChangePositionByMouseDragAndDrop_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
+            // DebugLabel
+            // 
+            this.DebugLabel.AutoSize = true;
+            this.DebugLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DebugLabel.Location = new System.Drawing.Point(83, 78);
+            this.DebugLabel.Name = "DebugLabel";
+            this.DebugLabel.Size = new System.Drawing.Size(109, 39);
+            this.DebugLabel.TabIndex = 0;
+            this.DebugLabel.Text = "label2";
+            // 
             // MAINFORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,13 +131,17 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(9)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(365, 945);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Block_Contacts);
             this.Controls.Add(this.Block_Search);
             this.Controls.Add(this.Block_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MAINFORM";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MAINFORM_Load);
             this.Block_Menu.ResumeLayout(false);
+            this.Block_Contacts.ResumeLayout(false);
+            this.Block_Contacts.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,6 +155,8 @@
         private System.Windows.Forms.Button Block_Menu_Button_Close;
         private System.Windows.Forms.Button Block_Menu_Button_GoOutsuda;
         private System.Windows.Forms.Timer Timer_Form_ChangePositionByMouseDragAndDrop;
+        private System.Windows.Forms.Label DebugLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

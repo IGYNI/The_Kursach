@@ -89,5 +89,8 @@
   <ItemGroup>
     <None Include="img\Block_Menu_Button_Iconify_Img.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LogInfo\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,9 +37,7 @@
             this.Block_Contacts = new System.Windows.Forms.Panel();
             this.Timer_Form_ChangePositionByMouseDragAndDrop = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.DebugLabel = new System.Windows.Forms.Label();
             this.Block_Menu.SuspendLayout();
-            this.Block_Contacts.SuspendLayout();
             this.SuspendLayout();
             // 
             // Block_Menu
@@ -93,7 +91,6 @@
             // 
             this.Block_Contacts.AutoSize = true;
             this.Block_Contacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(25)))), ((int)(((byte)(148)))));
-            this.Block_Contacts.Controls.Add(this.DebugLabel);
             this.Block_Contacts.Location = new System.Drawing.Point(0, 53);
             this.Block_Contacts.Name = "Block_Contacts";
             this.Block_Contacts.Size = new System.Drawing.Size(365, 206);
@@ -114,16 +111,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
-            // DebugLabel
-            // 
-            this.DebugLabel.AutoSize = true;
-            this.DebugLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DebugLabel.Location = new System.Drawing.Point(83, 78);
-            this.DebugLabel.Name = "DebugLabel";
-            this.DebugLabel.Size = new System.Drawing.Size(109, 39);
-            this.DebugLabel.TabIndex = 0;
-            this.DebugLabel.Text = "label2";
-            // 
             // MAINFORM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,8 +127,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MAINFORM_Load);
             this.Block_Menu.ResumeLayout(false);
-            this.Block_Contacts.ResumeLayout(false);
-            this.Block_Contacts.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +140,6 @@
         private System.Windows.Forms.Button Block_Menu_Button_Close;
         private System.Windows.Forms.Button Block_Menu_Button_GoOutsuda;
         private System.Windows.Forms.Timer Timer_Form_ChangePositionByMouseDragAndDrop;
-        private System.Windows.Forms.Label DebugLabel;
         private System.Windows.Forms.Label label1;
     }
 }

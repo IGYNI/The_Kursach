@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMessageMechanism\NetForSend\ToServer.cs" />
     <EmbeddedResource Include="MAINFORMUS.resx">
       <DependentUpon>MAINFORMUS.cs</DependentUpon>
     </EmbeddedResource>

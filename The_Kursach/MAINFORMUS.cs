@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using The_Kursach.SendMessageMechanism.NetForSend;
 
 namespace The_Kursach
 {
     public partial class MAINFORM : Form
     {
         public int _current_IDOfUser;
+        public string Server_Ip = "127.0.0.11";
+        public int Server_Port = 1337;
 
         private string NameOf_DirectoryWithTXT = "LogInfo",
                        TxtWithLog = "LogInfo.txt";
@@ -21,12 +24,30 @@ namespace The_Kursach
         public bool IsDragging = false;
         public Point ExtraCursorPosition;
 
+        private ToServer _server;
 
 
 
         public MAINFORM()
         {
+            
             InitializeComponent();
+        }
+
+        private void MAINFORM_Load(object sender, EventArgs e)
+        {
+            _server.ConnectToServer(Server_Ip, Server_Port);// ПОДКЛЮЧЕНИЕ К СЕРВЕРУ
+
+            //ПРОВЕРКА ИЛИ СОЗДАНИЕ ЛОГИНА
+            if (!Login_Check_Created())
+            {
+                Random random = new Random();
+                _current_IDOfUser = random.Next(0, 99999);
+                Login_Create(_current_IDOfUser);
+
+            }
+            else
+                _current_IDOfUser = Login_Get_ID();
         }
 
         private void Block_Menu_Button_Close_Click(object sender, EventArgs e)
@@ -68,18 +89,11 @@ namespace The_Kursach
 
         private void Login_Create(int id)
         {
-            DebugLabel.Text = "запуск функции";
             if (!Directory.Exists(NameOf_DirectoryWithTXT))
             {
                 string path = Path.Combine(Environment.CurrentDirectory, NameOf_DirectoryWithTXT);
                 Directory.CreateDirectory(path);
             }
-            DebugLabel.Text = "проверка директории";
-            //using (StreamWriter writer = File.CreateText($"{NameOf_DirectoryWithTXT}\x002F{TxtWithLog}"))
-            //{
-            //    DebugLabel.Text = "файл создан";
-            //    writer.WriteLine(_current_IDOfUser);
-            //}
             StreamWriter writer = File.CreateText($"{NameOf_DirectoryWithTXT}\x002F{TxtWithLog}");
             using (writer)
             { 
@@ -102,20 +116,7 @@ namespace The_Kursach
                 return false;
         }
 
-        private void MAINFORM_Load(object sender, EventArgs e)
-        {
-            DebugLabel.Text = "запуск";
-            if (!Login_Check_Created())
-            {
-                DebugLabel.Text = "файла нет";
-                Random random = new Random();
-                _current_IDOfUser = random.Next(0, 99999);
-                Login_Create(_current_IDOfUser);
-
-            }
-            else
-                _current_IDOfUser = Login_Get_ID();
-        }
+        
 
         private int Login_Get_ID() => System.Convert.ToInt32( File.ReadAllText($"{NameOf_DirectoryWithTXT}'\x002F'{TxtWithLog}"));
         

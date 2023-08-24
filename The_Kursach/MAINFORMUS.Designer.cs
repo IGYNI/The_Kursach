@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MAINFORM));
             this.Block_Menu = new System.Windows.Forms.Panel();
+            this._currentLabelOfIdOfUser = new System.Windows.Forms.Label();
             this.Block_Menu_Button_GoOutsuda = new System.Windows.Forms.Button();
             this.Block_Menu_Button_Close = new System.Windows.Forms.Button();
             this.Block_Search = new System.Windows.Forms.Panel();
             this.Block_Contacts = new System.Windows.Forms.Panel();
             this.Timer_Form_ChangePositionByMouseDragAndDrop = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.Send_TextBox = new System.Windows.Forms.TextBox();
+            this.Send_Btn = new System.Windows.Forms.Button();
+            this.Send_Temp_Log = new System.Windows.Forms.Label();
             this.Block_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +47,7 @@
             // 
             this.Block_Menu.AutoSize = true;
             this.Block_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(3)))), ((int)(((byte)(65)))));
+            this.Block_Menu.Controls.Add(this._currentLabelOfIdOfUser);
             this.Block_Menu.Controls.Add(this.Block_Menu_Button_GoOutsuda);
             this.Block_Menu.Controls.Add(this.Block_Menu_Button_Close);
             this.Block_Menu.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +56,16 @@
             this.Block_Menu.TabIndex = 0;
             this.Block_Menu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Block_Menu_MouseDown);
             this.Block_Menu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Block_Menu_MouseUp);
+            // 
+            // _currentLabelOfIdOfUser
+            // 
+            this._currentLabelOfIdOfUser.AutoSize = true;
+            this._currentLabelOfIdOfUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this._currentLabelOfIdOfUser.Location = new System.Drawing.Point(3, 4);
+            this._currentLabelOfIdOfUser.Name = "_currentLabelOfIdOfUser";
+            this._currentLabelOfIdOfUser.Size = new System.Drawing.Size(35, 13);
+            this._currentLabelOfIdOfUser.TabIndex = 3;
+            this._currentLabelOfIdOfUser.Text = "label1";
             // 
             // Block_Menu_Button_GoOutsuda
             // 
@@ -102,14 +116,34 @@
             this.Timer_Form_ChangePositionByMouseDragAndDrop.Interval = 10;
             this.Timer_Form_ChangePositionByMouseDragAndDrop.Tick += new System.EventHandler(this.Timer_Form_ChangePositionByMouseDragAndDrop_Tick);
             // 
-            // label1
+            // Send_TextBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.Send_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Send_TextBox.Location = new System.Drawing.Point(0, 846);
+            this.Send_TextBox.Name = "Send_TextBox";
+            this.Send_TextBox.Size = new System.Drawing.Size(325, 29);
+            this.Send_TextBox.TabIndex = 3;
+            this.Send_TextBox.TextChanged += new System.EventHandler(this.Send_TextBox_TextChanged);
+            // 
+            // Send_Btn
+            // 
+            this.Send_Btn.Location = new System.Drawing.Point(324, 846);
+            this.Send_Btn.Name = "Send_Btn";
+            this.Send_Btn.Size = new System.Drawing.Size(40, 29);
+            this.Send_Btn.TabIndex = 4;
+            this.Send_Btn.Text = " Senf";
+            this.Send_Btn.UseVisualStyleBackColor = true;
+            this.Send_Btn.Click += new System.EventHandler(this.Send_Btn_Click);
+            // 
+            // Send_Temp_Log
+            // 
+            this.Send_Temp_Log.AutoSize = true;
+            this.Send_Temp_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Send_Temp_Log.ForeColor = System.Drawing.Color.Yellow;
+            this.Send_Temp_Log.Location = new System.Drawing.Point(2, 262);
+            this.Send_Temp_Log.Name = "Send_Temp_Log";
+            this.Send_Temp_Log.Size = new System.Drawing.Size(0, 16);
+            this.Send_Temp_Log.TabIndex = 5;
             // 
             // MAINFORM
             // 
@@ -118,7 +152,9 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(9)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(365, 945);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Send_Temp_Log);
+            this.Controls.Add(this.Send_Btn);
+            this.Controls.Add(this.Send_TextBox);
             this.Controls.Add(this.Block_Contacts);
             this.Controls.Add(this.Block_Search);
             this.Controls.Add(this.Block_Menu);
@@ -127,6 +163,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MAINFORM_Load);
             this.Block_Menu.ResumeLayout(false);
+            this.Block_Menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +177,10 @@
         private System.Windows.Forms.Button Block_Menu_Button_Close;
         private System.Windows.Forms.Button Block_Menu_Button_GoOutsuda;
         private System.Windows.Forms.Timer Timer_Form_ChangePositionByMouseDragAndDrop;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label _currentLabelOfIdOfUser;
+        private System.Windows.Forms.TextBox Send_TextBox;
+        private System.Windows.Forms.Button Send_Btn;
+        private System.Windows.Forms.Label Send_Temp_Log;
     }
 }
 

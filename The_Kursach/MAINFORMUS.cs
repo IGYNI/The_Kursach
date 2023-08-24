@@ -36,8 +36,7 @@ namespace The_Kursach
 
         private void MAINFORM_Load(object sender, EventArgs e)
         {
-            _server.ConnectToServer(Server_Ip, Server_Port);// ПОДКЛЮЧЕНИЕ К СЕРВЕРУ
-
+            Send_Btn.Enabled = false;
             //ПРОВЕРКА ИЛИ СОЗДАНИЕ ЛОГИНА
             if (!Login_Check_Created())
             {
@@ -48,10 +47,15 @@ namespace The_Kursach
             }
             else
                 _current_IDOfUser = Login_Get_ID();
+            _currentLabelOfIdOfUser.Text = System.Convert.ToString(_current_IDOfUser);
+
+            _server = new ToServer();
+            _server.ConnectToServer(Server_Ip, Server_Port, _current_IDOfUser);// ПОДКЛЮЧЕНИЕ К СЕРВЕРУ
         }
 
         private void Block_Menu_Button_Close_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 
@@ -87,6 +91,10 @@ namespace The_Kursach
             IsDragging = false;
         }
 
+
+
+
+
         private void Login_Create(int id)
         {
             if (!Directory.Exists(NameOf_DirectoryWithTXT))
@@ -107,7 +115,7 @@ namespace The_Kursach
         {
             if (Directory.Exists(NameOf_DirectoryWithTXT))
             {
-                if(File.Exists($"{NameOf_DirectoryWithTXT}'\x002F'{TxtWithLog}"))
+                if(File.Exists($"{NameOf_DirectoryWithTXT}\x002F{TxtWithLog}"))
                     return true;
                 else
                     return false;
@@ -116,10 +124,27 @@ namespace The_Kursach
                 return false;
         }
 
-        
+        private int Login_Get_ID() => System.Convert.ToInt32( File.ReadAllText($"{NameOf_DirectoryWithTXT}\x002F{TxtWithLog}"));
 
-        private int Login_Get_ID() => System.Convert.ToInt32( File.ReadAllText($"{NameOf_DirectoryWithTXT}'\x002F'{TxtWithLog}"));
-        
+        private void Send_TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Send_TextBox.Text != null)
+                Send_Btn.Enabled = true;
+            else
+                Send_Btn.Enabled = false;
+        }
+
+        private void Send_Btn_Click(object sender, EventArgs e)
+        {
+            _server.SendMessage($"SENDMESSAGE:{Send_TextBox.Text}");
+            Send_Temp_Log.Text += $"[{DateTime.Now}] ID{_current_IDOfUser}:{Send_TextBox.Text} \n";
+            Send_TextBox.Text = "";
+            Send_Btn.Enabled = false;
+
+        }
+
+
+
 
     }
 }
